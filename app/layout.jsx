@@ -1,6 +1,5 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
@@ -37,18 +36,7 @@ export default function RootLayout({ children }) {
         <div className="flex flex-col min-h-full max-w-md m-auto border-x gap-2">
           <Header />
           <main className="py-4 px-2 flex-1">
-            <div className="flex flex-col gap-2">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Test</CardTitle>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Test</CardTitle>
-                </CardHeader>
-              </Card>
-            </div>
+            <div className="flex flex-col gap-2"></div>
 
             {children}
           </main>

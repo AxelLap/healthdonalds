@@ -1,4 +1,6 @@
-import { ShoppingBasket } from "lucide-react";
+"use client";
+import { useUserStore } from "@/lib/store/use-user-store";
+import { ShoppingBasket, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -17,10 +19,30 @@ export const Header = () => {
       </Link>
 
       <div className="ml-auto"></div>
+      <HeaderUserName />
       <Button size="sm" variant="outline" className="inline-flex gap-2">
         0
         <ShoppingBasket size={12} />
       </Button>
     </header>
+  );
+};
+
+const HeaderUserName = () => {
+  const userName = useUserStore((s) => s.userName);
+  const logout = useUserStore((s) => s.logout);
+
+  return (
+    <button
+      onClick={() => {
+        logout();
+      }}
+      className="inline-flex gap-2 items-center"
+    >
+      <User size={15} />
+      <span className="font-bold">
+        {userName !== null ? userName : "Unknown"}
+      </span>
+    </button>
   );
 };
