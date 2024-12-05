@@ -1,5 +1,6 @@
 "use client";
 
+import { ItemList } from "@/components/features/items/itemsList";
 import { useUserStore } from "@/lib/store/use-user-store";
 import Login from "./login/page";
 
@@ -9,6 +10,10 @@ export default function Home() {
   if (userName === null) {
     return <Login />;
   } else {
-    return <div>Hello Healthdonalds</div>;
+    return (
+      <div>
+        Hello Healthdonalds<ItemList></ItemList>
+      </div>
+    );
   }
 }

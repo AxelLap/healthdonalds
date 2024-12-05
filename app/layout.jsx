@@ -37,7 +37,6 @@ export default function RootLayout({ children }) {
           <Header />
           <main className="py-4 px-2 flex-1">
             <div className="flex flex-col gap-2"></div>
-
             {children}
           </main>
           <Footer />
