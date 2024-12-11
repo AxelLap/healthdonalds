@@ -1,4 +1,5 @@
 "use client";
+import { useCartQuantity } from "@/lib/store/use-cart-store";
 import { useUserStore } from "@/lib/store/use-user-store";
 import { ShoppingBasket, User } from "lucide-react";
 import Image from "next/image";
@@ -20,11 +21,18 @@ export const Header = () => {
 
       <div className="ml-auto"></div>
       <HeaderUserName />
-      <Button size="sm" variant="outline" className="inline-flex gap-2">
-        0
-        <ShoppingBasket size={12} />
-      </Button>
+      <ShoppingCart />
     </header>
+  );
+};
+
+const ShoppingCart = () => {
+  const quantity = useCartQuantity();
+  return (
+    <Button size="sm" variant="outline" className="inline-flex gap-2">
+      {quantity}
+      <ShoppingBasket size={12} />
+    </Button>
   );
 };
 
