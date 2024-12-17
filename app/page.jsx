@@ -1,5 +1,6 @@
 "use client";
 
+import { FooterCart } from "@/components/features/footer-cart/FooterCart";
 import { ItemList } from "@/components/features/items/itemsList";
 import { useUserStore } from "@/lib/store/use-user-store";
 import Login from "./login/page";
@@ -12,7 +13,8 @@ export default function Home() {
   } else {
     return (
       <div>
-        Hello Healthdonalds<ItemList></ItemList>
+        <ItemList></ItemList>
+        <FooterCart></FooterCart>
       </div>
     );
   }

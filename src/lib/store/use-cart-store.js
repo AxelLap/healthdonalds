@@ -58,7 +58,18 @@ export const useCartStore = create(
 export const useCartQuantity = () => {
   return useCartStore((s) => {
     return Object.values(s.items).reduce((acc, val) => {
+      if (!val.quantity) return acc;
       return acc + val.quantity;
+    }, 0);
+  });
+};
+
+export const useCartPrice = () => {
+  return useCartStore((s) => {
+    return Object.values(s.items).reduce((acc, val) => {
+      if (!val.quantity) return acc;
+
+      return acc + val.quantity * val.item.price;
     }, 0);
   });
 };
