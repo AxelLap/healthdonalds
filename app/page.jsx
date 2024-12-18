@@ -1,5 +1,6 @@
 "use client";
 
+import { CategoryList } from "@/components/features/categories/categoryList";
 import { FooterCart } from "@/components/features/footer-cart/FooterCart";
 import { ItemList } from "@/components/features/items/itemsList";
 import { useUserStore } from "@/lib/store/use-user-store";
@@ -12,9 +13,12 @@ export default function Home() {
     return <Login />;
   } else {
     return (
-      <div>
-        <ItemList></ItemList>
-        <FooterCart></FooterCart>
+      <div className="flex flex-col gap-4 max-h-full">
+        <div className="flex flex-1 overflow-hidden max-h-full gap-2">
+          <CategoryList />
+          <ItemList />
+        </div>
+        <FooterCart />
       </div>
     );
   }

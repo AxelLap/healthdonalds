@@ -35,10 +35,7 @@ export default function RootLayout({ children }) {
         <Toaster />
         <div className="flex flex-col min-h-full max-w-md m-auto border-x gap-2">
           <Header />
-          <main className="py-4 px-2 flex-1">
-            <div className="flex flex-col gap-2"></div>
-            {children}
-          </main>
+          <main className="py-4 px-2 flex-1">{children}</main>
           <Footer />
         </div>
       </body>
