@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { AdminAction } from "@/components/features/admin/AdminAction";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         )}
       >
         <Toaster />
+        <AdminAction />
         <div className="flex flex-col min-h-full max-w-md m-auto border-x gap-2">
           <Header />
           <main className="py-4 px-2 flex-1">{children}</main>
