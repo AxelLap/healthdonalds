@@ -2,7 +2,7 @@
 import { ItemsCart } from "@/components/features/cart/itemsCart";
 import { Item } from "@/components/features/items/Item";
 import { buttonVariants } from "@/components/ui/button";
-import { getItems } from "@/lib/items/get-item";
+import { getItems } from "@/lib/items/get-items";
 import { useCartStore } from "@/lib/store/use-cart-store";
 import { Loader } from "lucide-react";
 import Link from "next/link";

@@ -3,6 +3,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "../firesbase";
 
 export const setItem = async (id, item) => {
+  console.log("setItem called with:", id, item);
   // instanceof File permet de vérifier si image est un objet de type File
   if (item.image instanceof File) {
     //upload de l'image

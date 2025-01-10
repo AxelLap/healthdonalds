@@ -1,4 +1,4 @@
-import { getItems } from "@/lib/items/get-item";
+import { getItems } from "@/lib/items/get-items";
 import { useCategoryStore } from "@/lib/store/use-category-store";
 import { Loader } from "lucide-react";
 import useSWR from "swr";
